@@ -2317,7 +2317,7 @@ static WYPopoverTheme *defaultTheme_ = nil;
   // keyboard support
   if (keyboardHeight > 0) {
 
-    float keyboardY = UIInterfaceOrientationIsPortrait(orientation) ? WYKeyboardListener.rect.origin.y : WYKeyboardListener.rect.origin.x;
+    float keyboardY = overlayHeight - keyboardHeight;
 
     float yOffset = containerFrame.origin.y + containerFrame.size.height - keyboardY;
 
