@@ -158,7 +158,7 @@ WYPopoverController uses ARC.
 
 ~~iOS SDK 7.0 (with Xcode 5) is required.~~
 
-#### Cocoapods
+#### CocoaPods
 
 Add this line `pod 'WYPopoverController', '~> 0.3.7'` to your PodFile.
 
