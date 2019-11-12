@@ -3,6 +3,8 @@ WYPopoverController
 
 *[This fork](https://github.com/sammcewan/WYPopoverController) is being actively maintained. The [original one](https://github.com/nicolaschengdev/WYPopoverController) seems to have been abandoned.*
 
+Fixed Xcode Version 11 warnings 
+
 WYPopoverController is for the presentation of content in popover on iPhone / iPad devices. Very customizable.
 
 ### Screenshots
