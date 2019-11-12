@@ -67,7 +67,7 @@
 - (void)close:(id)sender
 {
     [settingsPopoverController dismissPopoverAnimated:YES completion:^{
-        [self popoverControllerDidDismissPopover:settingsPopoverController];
+        [self popoverControllerDidDismissPopover:self->settingsPopoverController];
     }];
 }
 
@@ -195,11 +195,11 @@
 
 #pragma mark - UIViewControllerRotation
 
-// Applications should use supportedInterfaceOrientations and/or shouldAutorotate..
+/*/ Applications should use supportedInterfaceOrientations and/or shouldAutorotate..
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
-}
+} */
 
 // New Autorotation support.
 - (BOOL)shouldAutorotate
@@ -207,7 +207,7 @@
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
 }
@@ -217,6 +217,7 @@
     return UIInterfaceOrientationPortrait;
 }
 
+/*
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [UIView animateWithDuration:duration animations:^{
@@ -224,7 +225,7 @@
         frame.origin.y = (UIInterfaceOrientationIsPortrait(toInterfaceOrientation) ? self.bottomLeftButton.frame.origin.y : frame.origin.y - frame.size.height * 1.25f);
         self.bottomRightButton.frame = frame;
     }];
-}
+} */
 
 #pragma mark - Memory Management
 
