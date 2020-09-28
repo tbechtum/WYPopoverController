@@ -18,7 +18,8 @@
     WYPopoverController* playerDetailsPopoverController;
     WYPopoverController* testPopoverController;
     
-    UIPopoverController* standardPopoverController;
+    // UIPopoverController' is deprecated: first deprecated in iOS 9.0 - UIPopoverController is deprecated. Popovers are now implemented as UIViewController presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
+    // UIPopoverController* standardPopoverController;
 }
 
 - (UIImage *)imageForRating:(int)rating;
@@ -49,7 +50,7 @@
 	{
 		UINavigationController *navigationController = segue.destinationViewController;
 		WYPlayerDetailsViewController* playerDetailsViewController = [[navigationController viewControllers] objectAtIndex:0];
-        playerDetailsViewController.contentSizeForViewInPopover = CGSizeMake(280, 280);
+        playerDetailsViewController.preferredContentSize = CGSizeMake(280, 280); // playerDetailsViewController.contentSizeForViewInPopover = CGSizeMake(280, 280);
 		playerDetailsViewController.delegate = self;
         
         WYStoryboardPopoverSegue* popoverSegue = (WYStoryboardPopoverSegue*)segue;
@@ -124,7 +125,7 @@
 - (IBAction)showTest:(id)sender
 {
     WYTestViewController* contentViewController = [[WYTestViewController alloc] init];
-    contentViewController.contentSizeForViewInPopover = CGSizeMake(240, 200);
+    contentViewController.preferredContentSize = CGSizeMake(240, 200); // contentViewController.contentSizeForViewInPopover = CGSizeMake(240, 200);
     contentViewController.title = @"Test";
     
     //UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:contentViewController];
@@ -200,9 +201,10 @@
 
 #pragma mark - UIViewControllerRotation
 
+/* deprecated
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
-}
+} */
 
 @end

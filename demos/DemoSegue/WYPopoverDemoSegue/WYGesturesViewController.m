@@ -20,7 +20,7 @@
 
 - (IBAction)buttonTap:(id)sender
 {
-    UIView *button = (UIView *)sender;
+    // UIView *button = (UIView *)sender;
 
     UINavigationController* contentViewController = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"StadiumList"]];
     
