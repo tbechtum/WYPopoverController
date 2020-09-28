@@ -9,10 +9,9 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors      = { 'Nicolas CHENG' => 'nicolas.cheng.dev@gmail.com', 'Sam McEwan' => 'me@sammcewan.co.nz', 'Vitaly Samoylik' => 'vitalys@gmail.com', 'Thomas Bechtum' => 'thomas.bechtum@unibz.it' }
 
-  s.source       = { :git => 'https://github.com/sammcewan/WYPopoverController.git', :tag => v#{s.version} }
+  s.source       = { :git => 'https://github.com/sammcewan/WYPopoverController.git', :tag => "v#{s.version}" }
+  s.platform     = :ios, '9.0'
   s.source_files = 'WYPopoverController/*.{h,m}'
   s.requires_arc = true
-
-  s.ios.deployment_target = '6.0'
   s.ios.frameworks = 'QuartzCore', 'UIKit', 'CoreGraphics'
 end
