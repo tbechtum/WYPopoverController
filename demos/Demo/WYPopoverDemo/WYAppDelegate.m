@@ -2,6 +2,7 @@
 //  WYAppDelegate.m
 //
 //  Created by Nicolas CHENG on 14/08/13.
+//  Migrated navBarInPopoverAppearance to iOS 9.0 on 28-SEP-2020
 //  Copyright (c) 2013 WHYERS. All rights reserved.
 //
 
@@ -46,7 +47,7 @@
     [popoverAppearance setViewContentInsets:UIEdgeInsetsMake(3, 0, 0, 0)];
     */
     
-    UINavigationBar *navBarInPopoverAppearance = [UINavigationBar appearanceWhenContainedIn:[UINavigationController class], [WYPopoverBackgroundView class], nil];
+    UINavigationBar *navBarInPopoverAppearance = [UINavigationBar appearanceWhenContainedInInstancesOfClasses: @[[UINavigationController class],[WYPopoverBackgroundView class]]]; // until iOS 8.0 = [UINavigationBar appearanceWhenContainedIn:[UINavigationController class], [WYPopoverBackgroundView class], nil];
     
     NSShadow *shadow = [[NSShadow alloc] init];
     [shadow setShadowColor:[UIColor clearColor]];
