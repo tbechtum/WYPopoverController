@@ -480,10 +480,12 @@
 		97B3CB6117CDE8E50005E1A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WYPopoverDemoSegue/WYPopoverDemoSegue-Prefix.pch";
 				INFOPLIST_FILE = "WYPopoverDemoSegue/WYPopoverDemoSegue-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MARKETING_VERSION = 1.3.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -493,10 +495,12 @@
 		97B3CB6217CDE8E50005E1A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WYPopoverDemoSegue/WYPopoverDemoSegue-Prefix.pch";
 				INFOPLIST_FILE = "WYPopoverDemoSegue/WYPopoverDemoSegue-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MARKETING_VERSION = 1.3.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
