@@ -322,29 +322,31 @@ static char const * const UINavigationControllerEmbedInPopoverTagKey = "UINaviga
 }
 
 - (void)sizzled_setContentSizeForViewInPopover:(CGSize)aSize {
-    [self sizzled_setContentSizeForViewInPopover:aSize];
-    
-    if ([self isKindOfClass:[UINavigationController class]] == NO && self.navigationController != nil) {
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self sizzled_setContentSizeForViewInPopover:aSize];
+        if ([self isKindOfClass:[UINavigationController class]] == NO && self.navigationController != nil) {
 #pragma clang diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated"
-        [self.navigationController setContentSizeForViewInPopover:aSize];
+            [self.navigationController setContentSizeForViewInPopover:aSize];
 #pragma clang diagnostic pop
-    }
+        }
+    });
 }
 
 - (void)sizzled_setPreferredContentSize:(CGSize)aSize {
-    [self sizzled_setPreferredContentSize:aSize];
-    
-    if ([self isKindOfClass:[UINavigationController class]] == NO && self.navigationController != nil)
-    {
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self sizzled_setPreferredContentSize:aSize];
+        if ([self isKindOfClass:[UINavigationController class]] == NO && self.navigationController != nil)
+        {
 #ifdef WY_BASE_SDK_7_ENABLED
-        if ([self.navigationController wy_isEmbedInPopover] == NO) {
-            return;
-        } else if ([self respondsToSelector:@selector(setPreferredContentSize:)]) {
-            [self.navigationController setPreferredContentSize:aSize];
-        }
+            if ([self.navigationController wy_isEmbedInPopover] == NO) {
+                return;
+            } else if ([self respondsToSelector:@selector(setPreferredContentSize:)]) {
+                [self.navigationController setPreferredContentSize:aSize];
+            }
 #endif
-    }
+        }
+    });
 }
 
 @end

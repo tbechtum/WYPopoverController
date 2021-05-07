@@ -16,10 +16,11 @@
 
 @implementation UITabBarController (WYPopoverDemo)
 
+/* deprecated
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
-}
+} */
 
 @end
 
